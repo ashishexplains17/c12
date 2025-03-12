@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Integration</title>
+    <title>Instagram Video Downloader</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .ad-container {
-            width: 100%;
-            max-width: 728px; /* Adjust width based on your ad size */
-            text-align: center;
-        }
-        iframe {
-            width: 100%;
-            height: 250px; /* Adjust height for different ad sizes */
-            border: none;
-        }
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { padding: 10px; margin: 10px; width: 80%; max-width: 400px; }
+        button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
     </style>
 </head>
 <body>
-    <div class="ad-container">
-        <iframe src="//pl26098576.effectiveratecpm.com/a57d611da99c08cf2a144acb35ccdfc1/invoke.js" 
-                width="100%" height="250" 
-                sandbox="allow-scripts allow-same-origin">
-        </iframe>
-    </div>
+
+    <h1>Instagram Video Downloader</h1>
+    <p>Paste the Instagram post link below:</p>
+
+    <input type="text" id="instaLink" placeholder="Enter Instagram post URL">
+    <button onclick="downloadVideo()">Download</button>
+
+    <script>
+        function downloadVideo() {
+            let url = document.getElementById("instaLink").value;
+            if (!url.includes("instagram.com")) {
+                alert("Please enter a valid Instagram link!");
+                return;
+            }
+
+            // Copy URL to clipboard
+            navigator.clipboard.writeText(url).then(() => {
+                alert("Link copied! Paste it on the SnapInsta site.");
+            });
+
+            // Open SnapInsta in a new tab
+            window.open("https://snapinsta.app", "_blank");
+        }
+    </script>
+    <script async="async" data-cfasync="false" src="//pl26098576.effectiveratecpm.com/a57d611da99c08cf2a144acb35ccdfc1/invoke.js"></script>
+    <div id="container-a57d611da99c08cf2a144acb35ccdfc1"></div>
+
 </body>
 </html>
