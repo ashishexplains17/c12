@@ -3,43 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Downloader</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md text-center">
-        <h1 class="text-3xl font-bold mb-4 text-gray-800">Instagram Downloader</h1>
-        <p class="text-gray-600 mb-4">Download Instagram videos & images easily</p>
-        
-        <!-- Input and Button -->
-        <div class="relative">
-            <input id="instaUrl" type="text" placeholder="Paste Instagram link here" 
-                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <button onclick="redirectToSnapinst()" 
-                    class="w-full bg-blue-500 text-white p-3 rounded-lg mt-4 hover:bg-blue-600 transition-all">
-                Download
-            </button>
-        </div>
-
-        <!-- Native Banner Ad -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="//pl26098576.effectiveratecpm.com/a57d611da99c08cf2a144acb35ccdfc1/invoke.js"></script>
-            <div id="container-a57d611da99c08cf2a144acb35ccdfc1"></div>
-        </div>
-    </div>
-
-    <script>
-        function redirectToSnapinst() {
-            const url = document.getElementById('instaUrl').value;
-            if (!url.includes("instagram.com")) {
-                alert("Please enter a valid Instagram link!");
-                return;
-            }
-            navigator.clipboard.writeText(url).then(() => {
-                alert("Link copied! Paste it on Snapinst.");
-            });
-            window.open("https://snapinst.app", "_blank");
+    <title>Ad Integration</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
-    </script>
+        .ad-container {
+            width: 100%;
+            max-width: 728px; /* Adjust width based on your ad size */
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 250px; /* Adjust height for different ad sizes */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <iframe src="//pl26098576.effectiveratecpm.com/a57d611da99c08cf2a144acb35ccdfc1/invoke.js" 
+                width="100%" height="250" 
+                sandbox="allow-scripts allow-same-origin">
+        </iframe>
+    </div>
 </body>
 </html>
