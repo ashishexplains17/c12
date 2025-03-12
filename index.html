@@ -10,6 +10,8 @@
     <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md text-center">
         <h1 class="text-3xl font-bold mb-4 text-gray-800">Instagram Downloader</h1>
         <p class="text-gray-600 mb-4">Download Instagram videos & images easily</p>
+        
+        <!-- Input and Button -->
         <div class="relative">
             <input id="instaUrl" type="text" placeholder="Paste Instagram link here" 
                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -17,6 +19,12 @@
                     class="w-full bg-blue-500 text-white p-3 rounded-lg mt-4 hover:bg-blue-600 transition-all">
                 Download
             </button>
+        </div>
+
+        <!-- Native Banner Ad -->
+        <div class="mt-6">
+            <script async="async" data-cfasync="false" src="//pl26098576.effectiveratecpm.com/a57d611da99c08cf2a144acb35ccdfc1/invoke.js"></script>
+            <div id="container-a57d611da99c08cf2a144acb35ccdfc1"></div>
         </div>
     </div>
 
@@ -27,19 +35,9 @@
                 alert("Please enter a valid Instagram link!");
                 return;
             }
-
-            // Dynamically inject popunder ad script
-            let adScript = document.createElement("script");
-            adScript.type = "text/javascript";
-            adScript.src = "//pl26098463.effectiveratecpm.com/c7/84/97/c78497a0d440b723f3c1d78565616651.js";
-            document.body.appendChild(adScript);
-
-            // Copy link to clipboard & redirect
             navigator.clipboard.writeText(url).then(() => {
                 alert("Link copied! Paste it on Snapinst.");
             });
-
-            // Open Snapinst in a new tab
             window.open("https://snapinst.app", "_blank");
         }
     </script>
