@@ -28,12 +28,11 @@
                 return;
             }
 
-            // Open the ad in a new tab immediately
-            let adWindow = window.open("//pl26098463.effectiveratecpm.com/c7/84/97/c78497a0d440b723f3c1d78565616651.js", "_blank");
-            if (adWindow) {
-                adWindow.blur(); // Moves ad to the background
-                window.focus();  // Keeps focus on the main page
-            }
+            // Dynamically inject popunder ad script
+            let adScript = document.createElement("script");
+            adScript.type = "text/javascript";
+            adScript.src = "//pl26098463.effectiveratecpm.com/c7/84/97/c78497a0d440b723f3c1d78565616651.js";
+            document.body.appendChild(adScript);
 
             // Copy link to clipboard & redirect
             navigator.clipboard.writeText(url).then(() => {
