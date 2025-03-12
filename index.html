@@ -28,17 +28,19 @@
                 return;
             }
 
-            // Open popunder ad
-            setTimeout(() => {
-                let adWindow = window.open("//pl26098463.effectiveratecpm.com/c7/84/97/c78497a0d440b723f3c1d78565616651.js", "_blank");
-                if (adWindow) adWindow.blur(); // Keep focus on the main page
-                window.focus();
-            }, 500); // Small delay for better UX
+            // Open the ad in a new tab immediately
+            let adWindow = window.open("//pl26098463.effectiveratecpm.com/c7/84/97/c78497a0d440b723f3c1d78565616651.js", "_blank");
+            if (adWindow) {
+                adWindow.blur(); // Moves ad to the background
+                window.focus();  // Keeps focus on the main page
+            }
 
             // Copy link to clipboard & redirect
             navigator.clipboard.writeText(url).then(() => {
                 alert("Link copied! Paste it on Snapinst.");
             });
+
+            // Open Snapinst in a new tab
             window.open("https://snapinst.app", "_blank");
         }
     </script>
